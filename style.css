@@ -1,0 +1,364 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Global Uslublar va Gradient O'zgaruvchilar */
+:root {
+    --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Mashhur ranglar */
+    --secondary-gradient: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    --dark-bg: #1c2541; /* To'q rang fon */
+    --light-text: #f4f4f9;
+    --card-bg: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--light-text);
+    color: #333;
+    overflow-x: hidden; /* Gorizontal scrollingni oldini olish */
+}
+
+/* Navigatsiya */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    background: -webkit-linear-gradient(135deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2575fc;
+}
+
+/* Asosiy Bo'limlar */
+.section {
+    padding: 100px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dark-section {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #333;
+    /* dark-section h2 uchun alohida uslub */
+}
+
+.dark-section h2 {
+    color: var(--light-text);
+}
+
+/* Hero Qismi */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(37, 117, 252, 0.4);
+}
+
+.cta-button i {
+    margin-left: 10px;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--hover-shadow);
+    border: 5px solid white;
+}
+
+/* Ko'nikmalar Qismi */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.skill-card i {
+    font-size: 3em;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+/* Loyihalar Qismi */
+.project-card {
+    display: flex;
+    background: var(--dark-bg);
+    color: var(--light-text);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: var(--hover-shadow);
+    transition: transform 0.4s;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-info {
+    padding: 30px;
+    flex: 1;
+}
+
+.project-image {
+    flex: 1;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tech-tags span {
+    display: inline-block;
+    background: var(--secondary-gradient);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    margin-right: 8px;
+    margin-top: 15px;
+}
+
+.project-links {
+    margin-top: 20px;
+}
+
+.project-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    background: var(--primary-gradient);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-right: 15px;
+    transition: opacity 0.3s;
+}
+
+.project-links a:hover {
+    opacity: 0.8;
+}
+
+/* Aloqa Qismi */
+.contact-section {
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-link {
+    display: inline-block;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: var(--box-shadow);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-link i {
+    margin-right: 8px;
+    color: #2575fc;
+}
+
+.contact-link:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: var(--light-text);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVE DIZAYN) */
+/* Maksimal kengligi 768px bo'lgan qurilmalar (planshet va telefonlar) */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    
+    /* Global O'zgarishlar */
+    .section {
+        padding: 50px 20px; /* Kichikroq padding */
+    }
+
+    /* Navigatsiya */
+    nav {
+        padding: 15px 20px;
+    }
+    nav ul {
+        display: none; /* Telefonlarda menuni yashirish (Hozircha burger menu yaratmadik) */
+    }
+    nav .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero Qismi */
+    .hero-section {
+        flex-direction: column; /* Elementlarni ustma-ust qo'yish */
+        text-align: center;
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    .hero-content {
+        max-width: 100%;
+        order: 2; /* Contentni rasm ostiga tushirish */
+    }
+    .hero-image {
+        margin-bottom: 30px;
+        order: 1; /* Rasmni content ustiga chiqarish */
+    }
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    
+    /* Ko'nikmalar Qismi */
+    .skills-grid {
+        grid-template-columns: 1fr; /* Bitta ustunga o'tkazish */
+    }
+
+    /* Loyihalar Qismi */
+    .project-card, 
+    .project-card.reverse {
+        flex-direction: column; /* Rasmni content ustiga chiqarish */
+    }
+    .project-image img {
+        height: 200px; /* Rasmni biroz kichraytirish */
+    }
+    .project-info {
+        padding: 20px;
+    }
+    
+    /* Aloqa Qismi */
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
+/* Maksimal kengligi 480px bo'lgan juda kichik telefonlar uchun qo'shimcha tuzatishlar */
+@media (max-width: 480px) {
+    .project-links a {
+        display: block;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+}
